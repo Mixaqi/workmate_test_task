@@ -5,6 +5,11 @@ from app.registry import REPORTS
 
 
 def setup_cli_parser() -> Namespace:
+    """
+    Sets up and parses cmd args
+    Returns:
+        Namespace: An argparse Namespace object
+    """
     parser = argparse.ArgumentParser(
         description="CSV Reporting Tool", allow_abbrev=False
     )

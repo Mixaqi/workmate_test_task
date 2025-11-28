@@ -6,6 +6,14 @@ from app.logger import logger
 
 
 def read_csv_files(paths: list[str]) -> CsvFile:
+    """Reads CSV files from the provided paths and returns their combined rows
+
+    Args:
+        param1: paths: list[str]: List of file paths to CSV files
+
+    Returns:
+        CsvFile (list[dict[str, str]]): rows from all CSV files
+    """
     result: CsvFile = []
 
     for raw_path in paths:
@@ -25,5 +33,4 @@ def read_csv_files(paths: list[str]) -> CsvFile:
                 logger.info(f"Read {len(rows) + 1} rows from {raw_path}")
         except OSError as e:
             raise OSError(f"Error reading file {raw_path}: {e}")
-
     return result
